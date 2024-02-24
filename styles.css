@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'calibiri', sans-serif;
+    background: linear-gradient(to right, #d4502fc0, #0e69d1c7);
+    color: #ee7e14a8 - linear gray;
+  }
+  
+  .calculator {
+    text-align: center;
+    border: 50px solid rgba(0, 0, 0, 0.048);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 1.2);
+    max-width: 400px;
+    background-color: #ec7e4b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  #birthdate {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* Make the input full-width */
+  }
+  
+  button {
+    padding: 20px;
+    font-size: 1em;
+    border: solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background: #38ada9;
+    color: hsl(59, 100%, 50%);
+  }
+  
+  button:hover {
+    background-color: #58db00;
+  }
+  
+  #result {
+    margin-top: 10px;
+    font-size: 1.2em;
+    
+  }
+  

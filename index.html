@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="Shortcut icon" type="x-icon" href="math.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Your CSS styles here */
+</style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Age Calculator</h2>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAge()">Calculate</button>
+    <div id="result"></div>
+  </div>
+
+<script>
+  function calculateAge() {
+    // Get the birthdate from the input field
+    var birthdateInput = document.getElementById('birthdate').value;
+
+    // Create a Date object for the entered birthdate
+    var birthdate = new Date(birthdateInput);
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Calculate the difference in milliseconds
+    var timeDifference = currentDate - birthdate;
+
+    // Calculate age components
+    var years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
+    var months = Math.floor((timeDifference % (365.25 * 24 * 60 * 60 * 1000)) / (30.44 * 24 * 60 * 60 * 1000));
+    var weeks = Math.floor(timeDifference / (7 * 24 * 60 * 60 * 1000));
+    var days = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
+    var hours = Math.floor(timeDifference / (60 * 60 * 1000));
+    var minutes = Math.floor(timeDifference / (60 * 1000));
+    var seconds = Math.floor(timeDifference / 1000);
+
+    // Display the result
+    document.getElementById('result').innerHTML = `
+        <p>Your age is:</p>
+        <p>${years} years</p>
+        <p>${months} months</p>
+        <p>${weeks} weeks</p>
+        <p>${days} days</p>
+        <p>${hours} hours</p>
+        <p>${minutes} minutes</p>
+        <p>${seconds} seconds</p>
+    `;
+  }
+
+  // Listen for Enter key press event
+  document.getElementById("birthdate").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      calculateAge();
+    }
+  });
+</script>
+</body>
+</html>
